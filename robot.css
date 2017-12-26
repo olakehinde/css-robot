@@ -1,0 +1,410 @@
+/*
+*Author : Ismail Nurudeen
+*Date : 06/10/2017
+*Day 7 of 30 Days Of Code
+*Day 2 of 3 Days of CSS
+*Name :CSS Animated Robot
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: steelblue;
+}
+
+.bot {
+  background: #fafafa;
+  height: 550px;
+  width: 500px;
+  position: relative;
+  margin: 10px auto;
+  animation: _walk 1s;
+  /*border: 2px solid dimgrey;*/
+}
+
+.bot>div {
+  background: #ddd;
+}
+
+.bot:after {
+  content: "Hi! I am a pure CSS drawn and Animated robot. I know that I am ugly but all thanks to my creator.";
+  height: 17%;
+  width: 33%;
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 3px 3px 0px;
+  text-align:center;
+  animation: showIntro 8s forwards linear;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+.bot-head {
+  background: #aaa;
+  height: 14%;
+  width: 18%;
+  position: relative;
+  margin: 100px auto 0px;
+  border: 1.5px solid #000;
+  border-radius: 10px 10px 3px 3px;
+  position: absolute;
+  left: 40%;
+}
+
+.bot-head .eye {
+  background: #000;
+  height: 15%;
+  width: 15%;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #000;
+  top: 15%;
+  perspective: 1000px;
+}
+
+.bot-head .eye:after {
+  content: "";
+  background: #fff;
+  height: 40%;
+  width: 40%;
+  position: absolute;
+  border-radius: 50%;
+  top: 38%;
+  left: 40%;
+  animation: move-eyes 2s alternate infinite linear;
+}
+
+.bot-head .left-eye {
+  background: #000;
+  height: 15%;
+  width: 15%;
+  position: absolute;
+  border-radius: 50%;
+  left: 15%;
+}
+
+.bot-head .right-eye {
+  background: #000;
+  height: 15%;
+  width: 15%;
+  position: absolute;
+  border-radius: 50%;
+  right: 15%;
+}
+
+.bot-head:after {
+  content: "";
+  height: 12%;
+  width: 12%;
+  position: absolute;
+  top: 31px;
+  left: 43%;
+  border: 2px solid #000;
+  border-radius: 5px;
+  border-top: none;
+  border-left: none;
+  transform: rotate(38deg);
+}
+
+.bot-head:before {
+  content: "";
+  height: 31%;
+  width: 1%;
+  position: absolute;
+  top: -23px;
+  left: 47%;
+  border: 1px solid #000;
+  border-top: none;
+  /*  border-left: none;*/
+  border-bottom: none;
+}
+
+.bot-head .light {
+  background: red;
+  height: 20%;
+  width: 20%;
+  position: absolute;
+  top: -40px;
+  left: 35%;
+  border: 2px solid #000;
+  border-radius: 50%;
+  animation: headLight 1s infinite linear;
+}
+
+.bot-head .ear {
+  height: 24%;
+  width: 10%;
+  position: absolute;
+  top: 40%;
+  border: 2px solid #000;
+}
+
+.bot-head .left-ear {
+  border-right: none;
+  left: -12px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+/* i am adding a style for the left ear hole*/
+.bot-head .left-ear-hole {
+  content: "";
+  background: #000;
+  height: 15%;
+  width: 15%;
+  position: absolute;
+  border-radius: 50%;
+  right: 15%;
+}
+
+.bot-head .right-ear {
+  border-left: none;
+  right: -12px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+/* i am adding a style for the right ear hole*/
+.bot-head .right-ear-hole {
+  content: "";
+  background: #000;
+  height: 15%;
+  width: 15%;
+  position: absolute;
+  border-radius: 50%;
+  right: 15%;
+}
+.bot-head .mouth {
+  height: 10%;
+  width: 25%;
+  position: absolute;
+  top: 73%;
+  left: 36%;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+
+.bot-body {
+  background: rgba(25, 25, 25, 0.6) !important;
+  height: 20%;
+  width: 35%;
+  position: absolute;
+  top: 33%;
+  left: 31%;
+  border: 2px double #333;
+  border-radius: 5px;
+}
+
+.lower-body {
+  background: #c6c6c6 !important;
+  height: 8%;
+  width: 20%;
+  position: absolute;
+  top: 54%;
+  left: 39%;
+  border: 2px double #555;
+  border-radius: 1px;
+}
+
+.bot .hand {
+  height: 25%;
+  width: 5%;
+  position: absolute;
+  top: 33%;
+  border: 1.5px solid steelblue;
+  border-radius: 4px;
+  transform-origin: 100%;
+}
+
+.bot .left-hand {
+  left: 24%;
+  border-radius: 10px 0px 0px 10px;
+  transform: translateX(4px);
+}
+
+.bot .right-hand {
+  right: 27%;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.bot .leg {
+  height: 25%;
+  width: 6%;
+  position: absolute;
+  top: 54%;
+  border: 1.5px solid steelblue;
+}
+
+.bot .left-leg {
+  left: 32%;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.bot .right-leg {
+  right: 33%;
+  border-radius: 0px 10px 10px 0px;
+}
+
+
+/*Controls buttons*/
+
+.move-eyes-btn:hover+.bot-head .eye {
+  top: 25%;
+  height: 1%;
+}
+
+.hands-up:hover+.both-hands>.hand {
+  animation: rightHand-up 1s forwards;
+}
+
+.left-hand-up:hover+.left-hand {
+  animation: leftHand-up 1s forwards;
+}
+
+.right-hand-up:hover+.right-hand {
+  animation: rightHand-up 1s forwards;
+}
+
+.walk-btn:hover+.dialog {
+  display: block;
+}
+
+.hands-up,
+.left-hand-up,
+.right-hand-up,
+.move-eyes-btn,
+.walk-btn {
+  padding: 10px 10px;
+  margin: 0px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 20px;
+  background: #777;
+  color: white;
+  cursor: pointer;
+}
+
+.right-hand-up {
+  left: 0%;
+}
+
+.left-hand-up {
+  left: 25%;
+}
+
+.hands-up {
+  left: 48%;
+}
+
+.move-eyes-btn {
+  left: 67%;
+  padding: 10px 10px;
+}
+
+.walk-btn {
+  left: 88%;
+}
+
+.dialog {
+  border: 1px solid #333;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px;
+  width: 30%;
+  position: absolute;
+  top: 12%;
+  right: 3%;
+  display: none;
+}
+
+
+/*Animation controls*/
+
+@keyframes headLight {
+  0% {
+    background: blue;
+  }
+  50% {
+    background: red;
+  }
+  100% {
+    background: green;
+  }
+}
+
+@keyframes leftHand-up {
+  0% {
+    border-radius: 10px 10px 8px 10px;
+    transform: rotateX(-70deg) translateY(-75px) translateX(6px);
+  }
+  30% {
+    border-radius: 10px 10px 8px 10px;
+    transform: rotateX(-50deg) translateY(-85px) translateX(6px);
+  }
+  50% {
+    border-radius: 10px 10px 0px 10px;
+    transform: rotateX(-40deg) translateY(-80px) translateX(6px);
+  }
+  100% {
+    /*    transform:translateY(-65px) translateX(6px);*/
+    transform: rotateX(0deg) translateY(-73px) translateX(6px);
+    border-radius: 10px 10px 0px 10px;
+  }
+}
+
+@keyframes rightHand-up {
+  0% {
+    border-radius: 10px 10px 8px 10px;
+    transform: rotateX(-70deg) translateY(-75px) translateX(-3px);
+  }
+  30% {
+    border-radius: 10px 10px 8px 10px;
+    transform: rotateX(-50deg) translateY(-85px) translateX(-3px);
+  }
+  50% {
+    border-radius: 10px 10px 8px 10px;
+    transform: rotateX(-40deg) translateY(-80px) translateX(-3px);
+  }
+  100% {
+    /*    transform:translateY(-65px) translateX(6px);*/
+    transform: rotateX(0deg) translateY(-73px) translateX(-3px);
+    border-radius: 10px 10px 10px 0px;
+  }
+}
+
+@keyframes move-eyes {
+  0% {
+    transform: translate(-2px) scale(1);
+  }
+  85% {
+    transform: translate(2px) scale(1.2);
+  }
+  100% {
+    transform: translate(3px) scale(1);
+  }
+}
+
+@keyframes showIntro {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes walk {
+  0% {
+    left: 10%;
+  }
+  100% {
+    left: %;
+  }
+}
